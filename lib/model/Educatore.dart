@@ -1,0 +1,52 @@
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+import 'dart:io';
+
+class Educatore extends Row {
+  final String _image;
+  final String _name;
+  final int _id;
+
+  const Educatore(this._image, this._name, this._id, {super.key});
+
+  int getIdentifier() {
+    return _id;
+  }
+
+  ImageProvider getImage(){
+    return AssetImage(_image);
+  }
+
+  String getName(){
+    return _name;
+  }
+
+  /*Row returnMenu() {
+    if (Platform.isAndroid || Platform.isIOS) {
+      return Row(
+        children: [
+          const Spacer(),
+          Image.asset(image, width: 30),
+          const Spacer()
+        ],
+      );
+    } else {
+      return Row(
+        children: [
+          const Spacer(),
+          Image.asset(image, width: 65),
+          const Spacer(),
+          Text(
+            name,
+            style: TextStyle(
+                fontSize: 25,
+                color: Colors.grey[800],
+                fontWeight: FontWeight.bold),
+          ),
+          const Spacer()
+        ],
+      );
+    }
+  }*/
+}
